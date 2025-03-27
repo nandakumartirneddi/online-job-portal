@@ -5,6 +5,7 @@ import com.portal.service.UserDetailsServiceImpl;
 import com.portal.util.JwtUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
@@ -36,6 +37,8 @@ public class ConfigSecurity {
             .csrf(csrf -> csrf.disable())  // Disable CSRF (not needed for JWT)
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/register", "/api/auth/login").permitAll() // Allow authentication endpoints
+                .requestMatchers(HttpMethod.POST, "/api/jobs/post").hasRole("ADMIN") // 🔒 Only admins
+                .requestMatchers(HttpMethod.GET, "/api/jobs").permitAll() // 🟢 Everyone can view jobs
                 .anyRequest().authenticated() // Secure all other APIs
             )
             .exceptionHandling(exception -> exception
