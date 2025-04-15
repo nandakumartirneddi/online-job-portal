@@ -1,0 +1,15 @@
+
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+    </linearGradient>
+  </defs>
+  <!-- Dinosaur Footprint Shape -->
+  <path d="M100 10 C90 40, 70 60, 100 90 C130 60, 110 40, 100 10 Z" fill="url(#gold-gradient)" stroke="#B8860B" stroke-width="2"/>
+  <!-- Briefcase Icon -->
+  <rect x="70" y="90" width="60" height="40" rx="5" ry="5" fill="url(#gold-gradient)" stroke="#B8860B" stroke-width="2"/>
+  <line x1="70" y1="110" x2="130" y2="110" stroke="#B8860B" stroke-width="2"/>
+  <rect x="95" y="80" width="10" height="10" fill="url(#gold-gradient)" stroke="#B8860B" stroke-width="1"/>
+</svg>
